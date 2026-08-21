@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Family Tree</title>
+<meta name="viewport" content="width=device-width, initial-scale=0.7">
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:20px;
+    font-family:Arial,sans-serif;
+    background:#f2f4f7;
+    text-align:center;
+}
+
+h1{
+    color:#333;
+    margin-bottom:35px;
+}
+
+/* PERSON */
+
+.person{
+    background:white;
+    padding:10px;
+    border-radius:15px;
+    box-shadow:0 3px 10px #bbb;
+    cursor:pointer;
+    transition:0.3s;
+    display:inline-block;
+}
+
+.person:hover{
+    transform:scale(1.05);
+}
+
+.person img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #444;
+}
+
+.small img{
+    width:70px;
+    height:70px;
+}
+
+.name{
+    font-weight:bold;
+    margin-top:8px;
+}
+
+/* HIDE */
+
+.hidden{
+    display:none;
+}
+
+/* FATHER MOTHER */
+
+.parents{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:80px;
+    margin:30px 0 60px;
+}
+
+/* FIVE SONS */
+
+.sons{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+/* SON FAMILY */
+
+.family{
+    background:white;
+    padding:15px;
+    border-radius:15px;
+    box-shadow:0 3px 10px #ccc;
+    min-width:180px;
+}
+
+/* HUSBAND WIFE */
+
+.couple{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    align-items:center;
+}
+
+/* CHILDREN */
+
+.children{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+/* GRANDCHILD FAMILY */
+
+.gfamily{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* LINE */
+
+.line{
+    width:2px;
+    height:25px;
+    background:#555;
+    margin:10px auto;
+}
+
+/* D SON */
+
+.dchildren{
+    display:flex;
+    justify-content:center;
+    margin-top:5px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .parents{
+        gap:20px;
+    }
+
+    .sons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .family{
+        width:100%;
+        max-width:500px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<h1>My Family Tree</h1>
+
+
+
+<!-- FATHER + MOTHER -->
+
+
+<div class="parents">
+
+    <!-- FATHER -->
+
+    <div class="person">
+        <img src="1.png" alt="Father">
+
+        <div class="name">
+          Karamshi Bhai 
+        </div>
+    </div>
+
+
+    <!-- MOTHER -->
+
+    <div class="person">
+        <img src="2.png" alt="Mother">
+
+        <div class="name">
+            Champa Ben
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<div class="sons">
+
+
+<!-- SON 1 -->
+
+
+<div class="family">
+
+    <!-- SON 1 + WIFE -->
+
+    <div class="couple">
+
+        <div class="person"
+             onclick="toggle('son1')">
+
+            <img src="s1.png">
+
+            <div class="name">
+                Suresh Bhai
+            </div>
+
+        </div>
+
+
+        <div class="person">
+
+            <img src="s2.png">
+
+            <div class="name">
+                Bhavana Ben
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SON 1 CHILDREN -->
+
+    <div id="son1" class="children hidden">
+
+
+        <!-- GRANDSON 1 -->
+
+        <div class="gfamily">
+
+            <div class="couple">
+
+                <div class="person small"
+                     onclick="toggle('son1g1')">
+
+                    <img src="s3.png">
+
+                    <div class="name">
+                        Nishant
+                    </div>
+
+                </div>
+
+
+                <div class="person small">
+
+                    <img src="s4.png">
+
+                    <div class="name">
+                        Dhavanika
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- D SON -->
+
+            <div id="son1g1" class="hidden">
+
+                <div class="line"></div>
+
+                <div class="dchildren">
+
+                    <div class="person small">
+
+                        <img src="ss5.png">
+
+                        <div class="name">
+                            Prnvi
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GRANDSON 2 -->
+
+        <div class="gfamily">
+
+            <div class="person small">
+
+                <img src="s5.png">
+
+                <div class="name">
+                    Drashti
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GRANDSON 3 -->
+
+        <div class="gfamily">
+
+            <div class="person small">
+
+                <img src="s6.png">
+
+                <div class="name">
+                    Raj
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- SON 2 -->
+
+
+<div class="family">
+
+    <!-- SON 2 + WIFE -->
+
+    <div class="couple">
+
+        <div class="person"
+             onclick="toggle('son2')">
+
+            <img src="s7.png">
+
+            <div class="name">
+                Ela Ben
+            </div>
+
+        </div>
+
+
+        <div class="person">
+
+            <img src="s8.png">
+
+            <div class="name">
+                Shanti Bhai
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SON 2 CHILDREN -->
+
+    <div id="son2" class="children hidden">
+
+
+        <!-- G SON 1 -->
+
+        <div class="gfamily">
+
+            <div class="person small">
+
+                <img src="s9.png">
+
+                <div class="name">
+                    Parth
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- G SON 2 -->
+
+        <div class="gfamily">
+
+            <div class="person small">
+
+                <img src="s10.png">
+
+                <div class="name">
+                    Dhruv
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- SON 3 -->
+
+
+<div class="family">
+
+    <!-- SON 3 + WIFE -->
+
+    <div class="couple">
+
+        <div class="person"
+             onclick="toggle('son3')">
+
+            <img src="s11.png">
+
+            <div class="name">
+                Shilpa Ben
+            </div>
+
+        </div>
+
+
+        <div class="person">
+
+            <img src="s12.png">
+
+            <div class="name">
+                Ramesh Bhai
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SON 3 CHILDREN -->
+
+    <div id="son3" class="children hidden">
+
+
+        <!-- G SON 1 -->
+
+        <div class="gfamily">
+
+            <div class="person small">
+
+                <img src="s13.png">
+
+                <div class="name">
+                    Jayesh
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- G SON 2 -->
+
+        <div class="gfamily">
+
+            <div class="person small">
+
+                <img src="s14.png">
+
+                <div class="name">
+                    Berijesh
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<!-- SON 4 -->
+
+
+<div class="family">
+
+    <!-- SON 5 + WIFE -->
+
+    <div class="couple">
+
+        <div class="person"
+             onclick="toggle('son5')">
+
+            <img src="s15.png">
+
+            <div class="name">
+             Geeta Ben            </div>
+
+        </div>
+
+
+        <div class="person">
+
+            <img src="s16.png">
+
+            <div class="name">
+                Vinu Bhai
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SON 5 CHILDREN -->
+
+    <div id="son5" class="children hidden">
+
+
+        <!-- G SON 1 -->
+
+        <div class="gfamily">
+
+            <div class="person small">
+
+                <img src="s17.png">
+
+                <div class="name">
+                    Janvi
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- G SON 2 -->
+
+        <div class="gfamily">
+
+            <div class="person small">
+
+                <img src="s18.png">
+
+                <div class="name">
+                    Hir
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- SON 5 -->
+
+
+<div class="family">
+
+    <!-- SON 4 + WIFE -->
+
+    <div class="couple">
+
+        <div class="person"
+             onclick="toggle('son4')">
+
+            <img src="s19.png">
+
+            <div class="name">
+                 Jayshree Ben
+            </div>
+
+        </div>
+
+
+        <div class="person">
+
+            <img src="s20.png">
+
+            <div class="name">
+                Daya Bhai 
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SON 4 CHILDREN -->
+
+    <div id="son4" class="children hidden">
+
+
+        <!-- G SON 1 -->
+
+        <div class="gfamily">
+
+            <div class="person small">
+
+                <img src="s21.png">
+
+                <div class="name">
+                    Shruti
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- G SON 2 -->
+
+        <div class="gfamily">
+
+            <div class="person small">
+
+                <img src="s22.png">
+
+                <div class="name">
+                    Dhruvi
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- G SON 3 -->
+
+        <div class="gfamily">
+
+            <div class="person small">
+
+                <img src="s23.png">
+
+                <div class="name">
+                   Mohit
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+<script>
+
+function toggle(id){
+
+    var element = document.getElementById(id);
+
+    if(element.classList.contains("hidden")){
+
+        element.classList.remove("hidden");
+
+    }
+
+    else{
+
+        element.classList.add("hidden");
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
